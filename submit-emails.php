@@ -80,11 +80,12 @@
 					//console.log(results);
 
 					if(results){
-						if(results.success){
-							$('#alert-target').html('<div class="alert alert-success" role="alert">We found "'+results.unique_count+'" Unique Emails!</div>');
-						}else{
-							$('#alert-target').html('<div class="alert alert-danger" role="alert">An error occured! Sorry!</div>');
-						}
+						// if(results.success){
+						// 	$('#alert-target').html('<div class="alert alert-success" role="alert">We found "'+results.unique_count+'" Unique Emails!</div>');
+						// }else{
+						// 	$('#alert-target').html('<div class="alert alert-danger" role="alert">An error occured! Sorry!</div>');
+						// }
+						$('#alert-target').html('<div class="alert alert-success" role="alert">We found "'+results+'" Unique Emails!</div>');
 					}
 				});
 
