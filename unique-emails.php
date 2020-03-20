@@ -43,7 +43,7 @@ $errors = [];
 // Store our unique emails
 $unique_emails = [];
 
-if(! empty($_POST['emails'])){
+if(! empty($_POST['emails']) && is_array($_POST['emails'])){
 	foreach($_POST['emails'] as $email){
 
 		// validate that this is a valid email
@@ -67,8 +67,7 @@ if(! empty($_POST['emails'])){
 
 			// If this email does not already exist in our array of unique emails, add it
 			if(! in_array($clean_email, $unique_emails)){
-				// Should we be using our cleaned email or the submitted email for our unique?
-				$unique_emails[] = $clean_email; // $email
+				$unique_emails[] = $clean_email;
 			}
 		}
 	}
