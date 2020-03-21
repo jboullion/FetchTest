@@ -5,14 +5,6 @@
  * Gmail will ignore the placement of "." in the username. And it will ignore any portion of the username after a "+".
  */
 
-// Prevent returning cached results
-// header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-// header("Cache-Control: post-check=0, pre-check=0", false);
-// header("Pragma: no-cache");
-
-// // Return our information in a json format for easy consumption
-// header('Content-Type: application/json');
-
 // Test Emails
 // $emails = [
 // 	'test.email@gmail.com',
@@ -21,18 +13,6 @@
 // ];
 
 if(empty($_POST['emails'])){
-	// $results = [
-	// 	'success' => 0,
-	// 	'unique_count' => 0,
-	// 	'unique_emails' => [],
-	// 	'errors' => array(
-	// 		'No Emails Provided'
-	// 	),
-	// 	//'POST' => $_POST
-	// ];
-	
-	// // return our encoded results
-	// echo json_encode($results);
 	echo 0;
 	exit;
 }
@@ -73,16 +53,6 @@ if(! empty($_POST['emails']) && is_array($_POST['emails'])){
 	}
 }
 
-// Build our results
+// Return our count
 echo count($unique_emails);
-
-// $results = [
-// 	'success' => 1,
-// 	'unique_count' => count($unique_emails),
-// 	'unique_emails' => $unique_emails,
-// 	'errors' => $errors
-// ];
-
-// // return our encoded results
-// echo json_encode($results);
 exit;
